@@ -122,7 +122,7 @@ nav a:active{
     }
 }
 
-/* ----------ARTICLE---------- */
+/* ------------- ARTICLE ------------- */
 article{
     height:100vh;
     background-image: url(aset/body.png);
@@ -328,6 +328,7 @@ footer h4{
         margin-top: 15%;
         flex-direction: column;
         justify-content:space-between;
+        height:auto;
     }
 
     .profile-wrapper{
@@ -338,6 +339,9 @@ footer h4{
         flex-flow: column nowrap;
         justify-content:space-between;
         height:100vh;
+    }
+    .service-container{
+        height:auto;
     }
     .service{
         width:90%;
