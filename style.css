@@ -298,10 +298,11 @@ footer h4{
     }
     .gallery-wrapper{
         flex-flow: row wrap;
+        justify-content:space-around;
     }
     .vector-img{
-        width:140px;
-        height:140px;
+        width:120px;
+        height:120px;
     }
 }
 
