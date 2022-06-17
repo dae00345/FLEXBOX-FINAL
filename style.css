@@ -297,6 +297,7 @@ footer h4{
 
     }
     .gallery-wrapper{
+        width:80%;
         flex-flow: row wrap;
         justify-content:space-around;
     }
