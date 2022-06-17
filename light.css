@@ -1,0 +1,275 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* border: white dashed 1px; */
+}
+body{
+    font-family: sans-serif;
+    overflow-x: hidden;
+    height:300vh;
+    background-color: grey;
+    color:white;
+}
+
+/* ---------------------NAVBAR--------------------- */
+nav{
+    display: flex;
+    background-color:none;
+    justify-content: space-around;
+    padding: 20px;
+    color: rgb(21, 233, 230);
+    height: 50px;
+    align-items: center;
+    position:fixed;
+    width:100%;
+    top: 0;
+    left: 0;
+}
+nav ul{
+    display:flex;
+    list-style-type: none;
+    width: 30%;
+    justify-content: space-between;
+}
+nav .logo{
+    display:flex;
+    justify-content: center;
+    font-family: 'roboto' sans-serif;
+    background-color:rgb(0, 135, 180);
+    color: white;
+    padding: 10px;
+    border-radius: 5px 0 5px 0;
+    animation:logoanimation 2s infinite;
+}
+nav a{
+    color: white;
+    text-decoration:none;
+    padding: 5px;
+    border: white solid 3px;
+    border-radius: 5px 0 5px 0;
+}
+nav ul input{
+    background-color:deepskyblue;
+    width:20px;
+    height:20px;
+
+}
+
+/* --------------HAMBURGER MENU-------------- */
+.menu-toggle{
+    display:none;
+    flex-direction: column;
+    height:20px;
+    justify-content: space-between;
+    position: relative;
+}
+.menu-toggle input{
+    position: absolute;
+    width:40px;
+    height:28px;
+    left: -5px;
+    top:-3px;
+    opacity: 0;
+    cursor :pointer;
+    z-index: 2;
+
+}
+.menu-toggle span{
+    display:block;
+    width:28px;
+    height:3px;
+    background-color:deepskyblue;
+    transition: all 0.4s;
+}
+/* ----------HAMBURGER MENU ANIMATION---------- */
+.menu-toggle span:nth-child(2){
+    transform-origin:0 0;
+}
+.menu-toggle input:checked ~ span:nth-child(2){
+    background-color: #fff;
+    transform:rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle span:nth-child(4){
+    transform-origin:0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+    background-color: #fff;
+    transform:rotate(-45deg) translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity:0;
+    transform:scale(0);
+}
+
+/* ----------LOGO ANIMATION---------- */
+@keyframes logoanimation{
+    0%{
+        
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* ----------ARTICLE---------- */
+article{
+    height:100vh;
+    background-image: url(aset/light.png);
+    background-position-y:100px;
+    background-size: cover;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+.profile-wrapper{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    align-items: center;
+    width:50%;
+    margin-top: 30px;
+}
+.profile-img{
+    background-image: url(aset/profile-img.jpg);
+    width:200px;
+    height:200px;
+    border-radius: 20% 0 20% 0;
+    border: solid white 2px;
+    background-position: center;
+    background-size: cover;
+    margin: 20px auto;
+}
+
+/* ----------SERIVCES---------- */
+.service-container{
+    display:flex;
+    flex-flow:column nowrap;
+    align-items: center;
+    padding: 30px;
+    height:100vh;
+    justify-content:center;
+    background:linear-gradient(45deg, rgb(74, 46, 103), rgb(28, 91, 110));
+    
+}
+.service-container h2{
+    margin-bottom: 20px;
+}
+.service-wrapper{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+
+}
+.service{
+    text-align: center;
+    width:30%;
+    background-color:black;
+    padding: 20px;
+    border-radius: 20px 0 20px 0;
+}
+.service:hover{
+    color:black;
+    background-color: deepskyblue;
+    transform: scale(1.1);
+    transition:0.5s;
+    cursor:pointer;
+}
+/* ----------GALLERY---------- */
+.gallery-container{
+    background-color: rgb(34, 43, 63);
+    height:100vh;
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.gallery-wrapper{
+    margin-top: 20px;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: center;
+    width:70%;
+
+}
+.vector-img{
+    width:200px;
+    height:200px;
+    border-radius: 10px 0 10px 0;
+}
+
+/* --------------Resposive breakpoint-------------- */
+
+/* Tablet */
+@media(max-width:768px){
+    nav ul{
+        width:50%;
+    }
+}
+
+/* Mobile */
+@media(max-width:576px){
+    body{
+        background-color: deeppink;
+    }
+    nav{
+        justify-content: space-between;
+        padding: 20px;
+        box-sizing: border-box;
+        height:80px;
+    }
+    nav ul{
+        background-color:deepskyblue;
+        position:absolute;
+        right: 0;
+        top: 0;
+        flex-direction: column;
+        height:100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: -13;
+        width:80%;
+        transform:translateX(100%);
+        transition: all 1s;
+        opacity:0;
+    }
+    nav ul.slide{
+        transform:translateX(0);
+        opacity:1;
+    }
+    .menu-toggle{
+        display:flex;
+    }
+    /* ARTICLE */
+
+    article{
+        margin-top: 18%;
+        flex-direction: column;
+        justify-content:space-between;
+    }
+
+    .profile-wrapper{
+        width:90%;
+    }
+    /* SERVICE */
+    .service-wrapper{
+        flex-flow: column nowrap;
+        justify-content:space-between;
+        height:100vh;
+    }
+    .service{
+        width:90%;
+    }
+    /* GALLERY */
+    .gallery-container{
+        height:auto;
+
+    }
+    .gallery-wrapper{
+        flex-flow: column wrap;
+    }
+
+
+}
